@@ -18,8 +18,15 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: true,
+      unique: true,
       minlength: 5
     },
+    descriptionText: {
+      type: String,
+      required: 'A little bit about your work in the music industry',
+      minlength: 1,
+      maxlength: 350
+  },
     category: {
         type: String,
         required: true,
@@ -29,17 +36,6 @@ const userSchema = new Schema(
     location: {
         type: String,
         enum: ['Miami', 'Houston', 'New York', 'Las Vegas', 'Los Angeles', 'Atlanta', 'Chicago', 'New Orleans', 'Nashville', 'Baltimore'] 
-    },
-    downloadURL: {
-        type: String,
-        required: "URL can't be empty",
-        unique: true
-    },
-    descriptionText: {
-        type: String,
-        required: 'A little bit about your work in the music industry',
-        minlength: 1,
-        maxlength: 350
     },
     preferences: {
       type: String,
@@ -86,6 +82,6 @@ userSchema.virtual('friendCount').get(function() {
   return this.friends.length;
 });
 
-const Artist = model('Artist', agentSchema);
+const User = model('User', userSchema);
 
-module.exports = Artist;
+module.exports = User;

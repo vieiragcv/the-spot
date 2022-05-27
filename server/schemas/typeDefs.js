@@ -9,10 +9,9 @@ type User {
     _id: ID
     username: String
     email: String
+    descriptionText: String
     category: String
     location: String
-    downloadURL: String
-    description: String
     preferences: String
 }
 
@@ -32,15 +31,18 @@ type Query {
     users: [User]
     user(username: String!): User
     preferences(username: String): [User]
-    preferences(username: String): [POI]
 }
 
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addPreferences(username: String! preferencesText: String!): Preferences
     addFriend(friendId: ID!): User
 }
 `;
 
 module.exports = typeDefs
+
+
+
+// In mutation you will need an addPreferences function:
+// addPreferences(username: String! preferencesText: String!): Preferences
