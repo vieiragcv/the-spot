@@ -2,13 +2,13 @@ const { Schema, model } = require('mongoose');
 const reactionSchema = require('./Reaction');
 const dateFormat = require('../utils/dateFormat');
 
-const postSchema = new Schema(
+const commentSchema = new Schema(
   {
-    thoughtText: {
+    commentText: {
       type: String,
-      required: 'You need to post something!',
+      required: 'You need to leave a thought!',
       minlength: 1,
-      maxlength: 500
+      maxlength: 280
     },
     createdAt: {
       type: Date,
@@ -28,10 +28,10 @@ const postSchema = new Schema(
   }
 );
 
-postSchema.virtual('postCount').get(function() {
-  return this.post.length;
+commentSchema.virtual('reactionCount').get(function() {
+  return this.reactions.length;
 });
 
-const Thought = model('Post', postSchema);
+const Comment = model('comment', commentSchema);
 
-module.exports = Post;
+module.exports = Comment;

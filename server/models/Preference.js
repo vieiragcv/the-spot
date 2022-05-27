@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const preferenceSchema = new Schema(
   {
-    thoughtText: {
+    preferences: {
       type: String,
       required: 'Enter your preference!',
       minlength: 1,
@@ -12,15 +12,9 @@ const preferenceSchema = new Schema(
     username: {
       type: String,
       required: true
-    },
-  },
-  {
-    toJSON: {
-      getters: true
     }
-  }
-);
-
+  });
+  
 preferenceSchema.virtual('preferenceCount').get(function() {
   return this.preference.length;
 });

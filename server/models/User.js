@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const artistSchema = new Schema(
+const userSchema = new Schema(
   {
     username: {
       type: String,
@@ -20,16 +20,41 @@ const artistSchema = new Schema(
       required: true,
       minlength: 5
     },
-    post: [
+    category: {
+        type: String,
+        required: true,
+        enum: ['Artist', 'Agent', 'Manager', 'AandR', 'Producer', 'Venue', 'Record Label', 'Studio', 'Event'],
+        default: 'Artist'
+    },
+    location: {
+        type: String,
+        enum: ['Miami', 'Houston', 'New York', 'Las Vegas', 'Los Angeles', 'Atlanta', 'Chicago', 'New Orleans', 'Nashville', 'Baltimore'] 
+    },
+    downloadURL: {
+        type: String,
+        required: "URL can't be empty",
+        unique: true
+    },
+    descriptionText: {
+        type: String,
+        required: 'A little bit about your work in the music industry',
+        minlength: 1,
+        maxlength: 350
+    },
+    preferences: {
+      type: String,
+      enum: ['Guitar', 'classical', 'acoustic', 'live gigs', 'rnb', 'singer', 'lounge', 'horns', 'piano', 'keyboards', 'synths', 'pop', 'reggae', 'club', 'electronic', 'dance', 'rock', 'band', 'drums', 'percussion']
+    },
+    comments: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Post'
+        ref: 'Comment'
       }
     ],
     friends: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Artist'
+        ref: 'User'
       }
     ]
   },
@@ -39,9 +64,11 @@ const artistSchema = new Schema(
     }
   }
 );
+    
 
+  
 // set up pre-save middleware to create password
-artistSchema.pre('save', async function(next) {
+userSchema.pre('save', async function(next) {
   if (this.isNew || this.isModified('password')) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
