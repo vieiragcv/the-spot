@@ -2,8 +2,6 @@ import Auth from '../../utils/auth';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 const Header = () => {
 
   const logout = event => {
@@ -11,7 +9,7 @@ const Header = () => {
   };
   
   return (
-    <header className="" >
+    <header className="">
       <div className="">
         <Link to='/'>
           <h1>The Spot</h1>
