@@ -1,11 +1,10 @@
 import React from 'react';
-import Auth from '../utils/auth'
 
 const Signup = () => {
 
   return (
     <div>
-
+      <h3>SIGN UP</h3>
     </div>
   );
 };
