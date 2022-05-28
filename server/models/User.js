@@ -18,44 +18,39 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: true,
+      unique: true,
       minlength: 5
     },
-    category:{
+    descriptionText: {
       type: String,
-      required: true,
-      enum: ['Artist','Manager','Producer','Agent','AnR','Venue'],
-      default: 'Artist'
-    },
-    description: {
-      type: String,
-      required: true,
+      required: 'A little bit about your work in the music industry',
       minlength: 1,
       maxlength: 350
-    },
-    downloadURL:{
-      string: String,
-      require: "URL can't be empty !",
-      unique: true
+  },
+    category: {
+        type: String,
+        required: true,
+        enum: ['Artist', 'Agent', 'Manager', 'AandR', 'Producer', 'Venue', 'Label Rep', 'Studio', 'Event'],
+        default: 'Artist'
     },
     location: {
-     type: String, 
-     enum: ['Miami','Houston','New York','Las Vegas','Los Angelos','Atlanta','Chicago','New Orleans','Nashville','Baltimore']
-    
+        type: String,
+        enum: ['Miami', 'Houston', 'New York', 'Las Vegas', 'Los Angeles', 'Atlanta', 'Chicago', 'New Orleans', 'Nashville', 'Baltimore'] 
     },
     preferences: {
       type: String,
-      enum: ['Guitar','classical','acoustic','live gigs','rnb','singer','lounge','horns','piano','keyboards','synths','pop','reggae','club','electronic','dance','rock','band','drums','percussion','studio sessions','audition','concert','showcase','demo','competition','talent show','background vocalists','orchestra','samples','male','female','bass']
+      enum: ['Guitar', 'classical', 'acoustic', 'live gigs', 'rnb', 'singer', 'lounge', 'horns', 'piano', 'keyboards', 'synths', 'pop', 'reggae', 'club', 'electronic', 'dance', 'rock', 'band', 'drums', 'percussion']
     },
-    thoughts: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Thought'
-      }
-    ],
     friends: [
       {
         type: Schema.Types.ObjectId,
         ref: 'User'
+      }
+    ],
+    comments: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Comment'
       }
     ]
   },
@@ -65,7 +60,9 @@ const userSchema = new Schema(
     }
   }
 );
+    
 
+  
 // set up pre-save middleware to create password
 userSchema.pre('save', async function(next) {
   if (this.isNew || this.isModified('password')) {
