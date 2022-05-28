@@ -2,25 +2,16 @@ const { Schema, model } = require('mongoose');
 
 const preferenceSchema = new Schema(
   {
-    thoughtText: {
+    preferences: {
       type: String,
-      required: 'Enter your preference!',
-      minlength: 1,
-      maxlength: 250
+      enum: ['Guitar', 'classical', 'acoustic', 'live gigs', 'rnb', 'singer', 'lounge', 'horns', 'piano', 'keyboards', 'synths', 'pop', 'reggae', 'club', 'electronic', 'dance', 'rock', 'band', 'drums', 'percussion']
     },
-    
     username: {
       type: String,
       required: true
-    },
-  },
-  {
-    toJSON: {
-      getters: true
     }
-  }
-);
-
+  });
+  
 preferenceSchema.virtual('preferenceCount').get(function() {
   return this.preference.length;
 });
