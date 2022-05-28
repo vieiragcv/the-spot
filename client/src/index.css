@@ -1,10 +1,10 @@
 :root {
-  --primary: green;
-  --secondary: red ;
-  --tertiary: blue;
-  --quatrinary: #cadbda;
+  --primary: #f24500;
+  --secondary: #fec23c;
+  --tertiary: #ffd873;
+  --quatrinary: #fef4b7;
   --light: #e1f5f4;
-  --dark: #6c7575;
+  --dark: #a8a37b;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
   --spacing-one: calc(1rem * 0.25);
@@ -31,7 +31,7 @@ body {
   line-height: 1.5;
   font-size: 20px;
   color: var(--primary);
-  background-color: #f3fffee1;
+  background-color: var(--light);
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -87,13 +87,14 @@ nav {
 nav a {
   padding: 6px 10px;
   margin: 0 15px;
-  transition: all 0.2s;
+  transition: all 0.5s;
 }
 
 nav a:hover {
   color: var(--secondary);
   background-color: var(--dark);
 }
+
 
 .page-title {
   text-align: center;
@@ -110,15 +111,15 @@ nav a:hover {
   margin: 5px 0;
   border-radius: var(--border-radius);
   border: none;
-  color: var(--dark);
+  color: var(--secondary);
   outline: none;
-  background-color: var(--secondary);
+  background-color: var(--primary);
   transition: all 0.5s;
 }
 
 .btn:hover,
 .pill:hover {
-  color: var(--secondary);
+  color: var(--tertiary);
   background-color: var(--dark);
 }
 
@@ -131,12 +132,12 @@ nav a:hover {
   margin: 0 0 20px 0;
   border: 3px solid var(--dark);
   border-radius: var(--border-radius);
-  background-color: var(--light);
+  background-color: var(--tertiary);
   color: var(--dark);
 }
 
 .card-header {
-  color: var(--secondary);
+  color: var(--primary);
   margin: 0;
   background-color: var(--dark);
   padding: 0.625rem;
