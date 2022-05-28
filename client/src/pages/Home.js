@@ -1,11 +1,12 @@
 import React from 'react';
-import Auth from '../utils/auth'
 
 const Home = () => {
 
   return (
     <main>
-
+      <div className=''>
+        <p> HOME PAGE SECTION </p>
+      </div>
     </main>
   );
 };
