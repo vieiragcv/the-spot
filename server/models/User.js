@@ -30,7 +30,7 @@ const userSchema = new Schema(
     category: {
         type: String,
         required: true,
-        enum: ['Artist', 'Agent', 'Manager', 'AandR', 'Producer', 'Venue', 'Record Label', 'Studio', 'Event'],
+        enum: ['Artist', 'Agent', 'Manager', 'AandR', 'Producer', 'Venue', 'Label Rep', 'Studio', 'Event'],
         default: 'Artist'
     },
     location: {
@@ -41,16 +41,16 @@ const userSchema = new Schema(
       type: String,
       enum: ['Guitar', 'classical', 'acoustic', 'live gigs', 'rnb', 'singer', 'lounge', 'horns', 'piano', 'keyboards', 'synths', 'pop', 'reggae', 'club', 'electronic', 'dance', 'rock', 'band', 'drums', 'percussion']
     },
-    comments: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Comment'
-      }
-    ],
     friends: [
       {
         type: Schema.Types.ObjectId,
         ref: 'User'
+      }
+    ],
+    comments: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Comment'
       }
     ]
   },

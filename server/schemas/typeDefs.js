@@ -13,7 +13,26 @@ type User {
     category: String
     location: String
     preferences: String
+    friends: [User]
+    comments: [Comment]
 }
+
+type Comment {
+    _id: ID
+    commentText: String
+    createdAt: String
+    username: String
+    reactionCount: Int
+    reactions: [Reaction]
+  }
+
+  type Reaction {
+    _id: ID
+    reactionBody: String
+    createdAt: String
+    username: String
+  }
+
 
 type Preferences {
     _id: ID
@@ -36,6 +55,8 @@ type Query {
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    addComment(commentText: String!): Comment
+    addReaction(commentId: ID!, reactionBody: String!): Comment
     addFriend(friendId: ID!): User
 }
 `;

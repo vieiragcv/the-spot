@@ -4,11 +4,8 @@ const preferenceSchema = new Schema(
   {
     preferences: {
       type: String,
-      required: 'Enter your preference!',
-      minlength: 1,
-      maxlength: 250
+      enum: ['Guitar', 'classical', 'acoustic', 'live gigs', 'rnb', 'singer', 'lounge', 'horns', 'piano', 'keyboards', 'synths', 'pop', 'reggae', 'club', 'electronic', 'dance', 'rock', 'band', 'drums', 'percussion']
     },
-    
     username: {
       type: String,
       required: true

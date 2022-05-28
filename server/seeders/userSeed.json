@@ -7,7 +7,7 @@
         "category":"Artist",
         "location":"Miami",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Katlyn85", 
@@ -17,7 +17,7 @@
         "category": "Agent" ,
         "location": "Los Angeles",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Lessie_Kautzer61", 
@@ -27,7 +27,7 @@
         "category": "Artist",
         "location": "Nashville",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Elton_Heaney", 
@@ -37,17 +37,17 @@
         "category": "Producer",
         "location": "New York", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Josue67", 
         "email" : "Josue6785@yahoo.com", 
         "password" : "BNsmR75BHDH4na3",
         "descriptionText": "Lorem et illum placeat nulla laborum sapiente eum omnis quo ullam voluptas quas similique laborum ea",
-        "category": "AnR",
+        "category": "AandR",
         "location": "New York",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Jaron98", 
@@ -57,7 +57,7 @@
         "category": "Manager" ,
         "location": "Chicago" , 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Colt.Windler", 
@@ -66,7 +66,7 @@
         "descriptionText": "Lorem aperiam temporibus ut officia magni rerum animi id quam debitis voluptatem in voluptatem quas omnis quisquam ab",
         "category": "Venue",
         "location": "Nashville",
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Berta.Schmeler15", 
@@ -76,7 +76,7 @@
         "category": "Artist",
         "location": "Baltimore",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Kaley35", 
@@ -86,7 +86,7 @@
         "category": "Artist",
         "location": "Atlanta",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Bryana.Hackett", 
@@ -96,7 +96,7 @@
         "category": "Event",
         "location": "Chicago",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Madge.Feil", 
@@ -106,7 +106,7 @@
         "category": "Producer",
         "location": "New Orleans", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Alta.Kemmer20", 
@@ -115,7 +115,7 @@
         "descriptionText": "Lorem et illum placeat nulla laborum sapiente eum omnis quo ullam voluptas quas similique laborum ea",
         "category": "Studio",
         "location": "Houston", 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Vladimir_Block", 
@@ -134,17 +134,17 @@
         "category": "Artist",
         "location": "Las Vegas", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Alice_Simonis", 
         "email" : "Alice_Simonis8@gmail.com", 
         "password" : "ElVXqVGn9Tm_L38",
         "descriptionText": "Lorem cum id et dolores nobis et repellat ratione rerum dolores animi recusandae nesciunt veniam odio molestiae unde voluptatem accusantium vel",
-        "category": "AnR",
+        "category": "AandR",
         "location": "Baltimore", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Ayana.Bogisich", 
@@ -153,7 +153,7 @@
         "descriptionText": "libero laboriosam placeat mollitia ut earum quidem praesentium nisi",
         "category": "Studio",
         "location": "Los Angeles", 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Annabelle79", 
@@ -162,7 +162,7 @@
         "descriptionText": "libero laboriosam placeat mollitia ut earum quidem praesentium nisi",
         "category": "Venue",
         "location": "Los Angeles", 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Tyree17", 
@@ -181,7 +181,7 @@
         "category": "Artist",
         "location": "Miami", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Natasha_Beier59", 
@@ -191,7 +191,7 @@
         "category": "Agent",
         "location": "Atlanta", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Kory_Roob", 
@@ -201,7 +201,7 @@
         "category": "Artist",
         "location": "New York",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Gianni_Kiehn14", 
@@ -211,7 +211,7 @@
         "category": "Producer",
         "location": "Los Angeles",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Tomas93", 
@@ -220,7 +220,7 @@
         "descriptionText": "libero laboriosam placeat mollitia ut earum quidem praesentium nisi",
         "category": "Artist",
         "location": "Baltimore", 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Damion87", 
@@ -230,7 +230,7 @@
         "category": "Event",
         "location": "Nashville",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Chanel_Windler", 
@@ -240,7 +240,7 @@
         "category": "Artist",
         "location": "New York",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Jody.Eichmann", 
@@ -250,7 +250,7 @@
         "category": "Studio",
         "location": "Baltimore", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Delbert.Cruickshank5", 
@@ -260,7 +260,7 @@
         "category": "Agent",
         "location": "Los Angeles", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Reggie_Lang", 
@@ -279,17 +279,17 @@
         "category": "Manager",
         "location": "Nashville",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Shanelle_Hermann38", 
         "email" : "Shanelle_Hermann38_OConner@hotmail.com", 
         "password" : "YttiqyjJmLDT8sB", 
         "descriptionText": "libero laboriosam placeat mollitia ut earum quidem praesentium nisi",
-        "category": "AnR",
+        "category": "AandR",
         "location": "Los Angeles",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Mervin2", 
@@ -299,7 +299,7 @@
         "category": "Venue",
         "location":"New Orleans", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Joshuah.Morissette", 
@@ -309,7 +309,7 @@
         "category": "Studio",
         "location": "Miami", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Jacinto_Farrell", 
@@ -319,17 +319,17 @@
         "category": "Artist",
         "location": "Chicago", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Dee_Bogisich", 
         "email" : "Dee_Bogisich.Homenick23@gmail.com", 
         "password" : "EmXl6mHAsnypmWd",
         "descriptionText": "Lorem aperiam temporibus ut officia magni rerum animi id quam debitis voluptatem in voluptatem quas omnis quisquam ab",
-        "category": "AnR",
+        "category": "AandR",
         "location": "New York", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Taylor.Wolff", 
@@ -339,7 +339,7 @@
         "category": "Artist", 
         "location": "Nashville",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Fern.Schiller", 
@@ -349,7 +349,7 @@
         "category": "Event",
         "location": "New York", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Ora46", 
@@ -359,7 +359,7 @@
         "category": "Label Rep",
         "location": "Los Angeles",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Freida_Yost93", 
@@ -369,7 +369,7 @@
         "category": "Artist",
         "location": "New York", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Kiel_Ullrich", 
@@ -379,7 +379,7 @@
         "category": "Label Rep",
         "location": "Las Vegas", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Rosario.Howe", 
@@ -389,7 +389,7 @@
         "category": "Event",
         "location": "Houston",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Dwight.Reilly", 
@@ -399,7 +399,7 @@
         "category": "Manager",
         "location": "New Orleans",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Rashawn93", 
@@ -409,7 +409,7 @@
         "category": "Producer",
         "location": "Nashville", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Gia56", 
@@ -419,7 +419,7 @@
         "category": "Artist",
         "location": "Chicago",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Damien_Ullrich", 
@@ -429,7 +429,7 @@
         "category": "Agent",
         "location": "Miami", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Osbaldo.Jerde", 
@@ -439,7 +439,7 @@
         "category": "Artist",
         "location": "Baltimore",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Sammy.Kassulke74", 
@@ -457,7 +457,7 @@
         "descriptionText": "facere blanditiis cupiditate adipisci autem debitis iste optio",
         "category": "Event",
         "location": "Los Angeles", 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Anjali5", 
@@ -467,17 +467,17 @@
         "category": "Label Rep",
         "location": "Houston",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Daija.Rempel", 
         "email" : "Daija.Rempel_Schuster@yahoo.com", 
         "password" : "x5KHTb5d1x4DUtu",
         "descriptionText":"Lorem aperiam temporibus ut officia magni rerum animi id quam debitis voluptatem in voluptatem quas omnis quisquam ab",
-        "category": "AnR",
+        "category": "AandR",
         "location": "New York", 
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     },
     { 
         "username" : "Donny21", 
@@ -487,6 +487,6 @@
         "category": "Event",
         "location": "New Orleans",
         "friends" : [], 
-        "thoughts" : [] 
+        "comments" : [] 
     }
 ]
