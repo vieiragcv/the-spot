@@ -15,6 +15,7 @@ module.exports = {
             .split(' ')
             .pop()
             .trim();
+            console.log(token);
         }
     
         if (!token) {
