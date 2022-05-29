@@ -34,3 +34,14 @@ export const ADD_COMMENT = gql`
     }
   }
 `;
+
+export const ADD_PREFERENCE = gql`
+  mutation addPreference($tagText: String!) {
+    addPreference(tagText: $tag) {
+      _id
+      tagText
+      createdAt
+      username
+    }
+  }
+`;
