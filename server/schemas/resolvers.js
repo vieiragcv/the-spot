@@ -3,6 +3,10 @@ const { User, Comment } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
+
+/*-------------------------------------------------
+-                        QUERY 
+------------------------------------------------- */
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
@@ -40,6 +44,9 @@ const resolvers = {
     // }
   },
 
+  /*-------------------------------------------------
+-                        MUTATION
+------------------------------------------------- */
   Mutation: {
 
     addUser: async (parent, args) => {
