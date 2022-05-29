@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Feed = () => {
 
 /*   const logout = event => {
     event.preventDefault();
@@ -22,4 +22,4 @@ const Header = () => {
   );
 };
 
-export default Header 
+export default Feed;
