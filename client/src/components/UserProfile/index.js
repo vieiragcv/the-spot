@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Location = () => {
+const UserProfile = () => {
 
 /*   const logout = event => {
     event.preventDefault();
@@ -22,4 +22,4 @@ const Location = () => {
   );
 };
 
-export default Location;
+export default UserProfile;
