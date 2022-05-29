@@ -2,11 +2,8 @@ const { Schema, model } = require('mongoose');
 const reactionSchema = require('./Reaction');
 const dateFormat = require('../utils/dateFormat');
 
-<<<<<<<< HEAD:server/models/Thought.js
-const thoughtSchema = new Schema(
-========
+
 const commentSchema = new Schema(
->>>>>>>> 653fc39ea4195c0463101b328649f8c5a1b2fa7f:server/models/Comment.js
   {
     commentText: {
       type: String,
