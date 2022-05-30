@@ -41,12 +41,14 @@ const resolvers = {
   },
 
   Mutation: {
+
     addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
 
       return { token, user };
     },
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
@@ -78,12 +80,12 @@ const resolvers = {
           { $push: { comments: comment._id } },
           { new: true }
         );
-
         return comment;
       }
 
       throw new AuthenticationError("You need to be logged in!");
     },
+
     addReaction: async (parent, { commentId, reactionBody }, context) => {
       if (context.user) {
         const updatedThought = await Comment.findOneAndUpdate(
@@ -101,6 +103,7 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
+    
     addFriend: async (parent, { friendId }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
