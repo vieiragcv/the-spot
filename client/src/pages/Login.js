@@ -4,6 +4,10 @@ import Auth from '../utils/auth';
 import { LOGIN_USER } from '../utils/mutations';
 
 
+/*------------------------------------------------------------
+-        PAGES: LOGIN
+------------------------------------------------------------*/
+
 const Login = () => {
 
   const [formState, setFormState] = useState({ email: '', password: ''});
