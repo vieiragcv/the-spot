@@ -18,7 +18,7 @@ const resolvers = {
         return userData;
       }
 
-      throw new AuthenticationError("Not logged in");
+      throw new AuthenticationError("Not logged in - not getting token");
     },
     users: async () => {
       return User.find()
@@ -77,10 +77,7 @@ const resolvers = {
 
     addComment: async (parent, args, context) => {
       if (context.user) {
-        const comment = await Comment.create({
-          ...args,
-          username: context.user.username,
-        });
+        const comment = await Comment.create({...args, username: context.user.username });
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },

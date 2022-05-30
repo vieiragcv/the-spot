@@ -26,12 +26,19 @@ const userSchema = new Schema(
       required: false,
       minlength: 1,
       maxlength: 350
-  },
-    category: {
-        type: String,
-        required: false,
-        enum: ['Artist', 'Agent', 'Manager', 'AandR', 'Producer', 'Venue', 'Label Rep', 'Studio', 'Event'],
-        default: 'Artist'
+    },
+    closedDescriptionText: {
+      type: String,
+      required: false,
+      minlength: 1,
+      maxlength: 350
+    },
+    category: 
+    {
+      type: String,
+      required: false,
+      enum: ['Artist', 'Agent', 'Manager', 'AandR', 'Producer', 'Venue', 'Label Rep', 'Studio', 'Event'],
+      default: 'Artist'
     },
     location: {
         type: String,
