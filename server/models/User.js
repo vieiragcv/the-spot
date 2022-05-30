@@ -23,15 +23,22 @@ const userSchema = new Schema(
     },
     descriptionText: {
       type: String,
-      required: 'A little bit about your work in the music industry',
+      required: false,
       minlength: 1,
       maxlength: 350
-  },
-    category: {
-        type: String,
-        required: true,
-        enum: ['Artist', 'Agent', 'Manager', 'AandR', 'Producer', 'Venue', 'Label Rep', 'Studio', 'Event'],
-        default: 'Artist'
+    },
+    closedDescriptionText: {
+      type: String,
+      required: false,
+      minlength: 1,
+      maxlength: 350
+    },
+    category: 
+    {
+      type: String,
+      required: false,
+      enum: ['Artist', 'Agent', 'Manager', 'AandR', 'Producer', 'Venue', 'Label Rep', 'Studio', 'Event'],
+      default: 'Artist'
     },
     location: {
         type: String,

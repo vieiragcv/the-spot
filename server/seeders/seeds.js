@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // All of this code is from module 21 MERN and is a placeholder for what we may or may not nee
 const faker = require('faker');
 =======
@@ -86,6 +87,8 @@ const faker = require('faker');
 // Below is the code we will use to seed our database with data from the json since faker library is not working well
 // const faker will stay commented out
 // const faker = require('faker');
+=======
+>>>>>>> 8cce8aeac9863b023e05596bfddfa26492264c60
 const userSeeds = require('./userSeed.json');
 const CommentSeeds = require('./commentSeed.json');
 const db = require('../config/connection');

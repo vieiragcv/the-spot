@@ -1,12 +1,19 @@
 import React from 'react';
+import Preferences from '../components/Preferences';
+import UserProfile from '../components/UserProfile';
+import Feed from '../components/Feed';
 
+/*------------------------------------------------------------
+-           PAGES: HOME
+------------------------------------------------------------*/
 const Home = () => {
+
 
   return (
     <main>
-      <div className=''>
-        <p> HOME PAGE SECTION </p>
-      </div>
+      <UserProfile />
+      <Preferences />
+      <Feed />
     </main>
   );
 };

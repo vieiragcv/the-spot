@@ -3,6 +3,10 @@ const { User, Comment } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
+
+/*-------------------------------------------------
+-                        QUERY 
+------------------------------------------------- */
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
@@ -14,7 +18,7 @@ const resolvers = {
         return userData;
       }
 
-      throw new AuthenticationError("Not logged in");
+      throw new AuthenticationError("Not logged in - not getting token");
     },
     users: async () => {
       return User.find()
@@ -40,13 +44,18 @@ const resolvers = {
     // }
   },
 
+  /*-------------------------------------------------
+-                        MUTATION
+------------------------------------------------- */
   Mutation: {
+
     addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
 
       return { token, user };
     },
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
@@ -68,22 +77,19 @@ const resolvers = {
 
     addComment: async (parent, args, context) => {
       if (context.user) {
-        const comment = await Comment.create({
-          ...args,
-          username: context.user.username,
-        });
+        const comment = await Comment.create({...args, username: context.user.username });
 
         await User.findByIdAndUpdate(
           { _id: context.user._id },
           { $push: { comments: comment._id } },
           { new: true }
         );
-
         return comment;
       }
 
       throw new AuthenticationError("You need to be logged in!");
     },
+
     addReaction: async (parent, { commentId, reactionBody }, context) => {
       if (context.user) {
         const updatedThought = await Comment.findOneAndUpdate(
@@ -101,6 +107,7 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
+    
     addFriend: async (parent, { friendId }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
