@@ -10,7 +10,7 @@ import { ADD_USER } from '../utils/mutations';
 
 const Inbox = () => {
 
-retrun (
+return (
   <main className='flex-row justify-center'>
       <div className='col-12 col-md-6'>
         <div className='card'>
