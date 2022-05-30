@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Comment } = require("../models");
+const { User, Comment, Preference } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -84,9 +84,31 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
+
+    addPreference: async (parent, args, context) => {
+      if (context.user) {
+        const preference = await Preference.create({
+          ...args,
+          username: context.user.username,
+        });
+
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { preferences: preference._id } },
+          { new: true }
+        );
+
+        return preference;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+    },
+
+
+
     addReaction: async (parent, { commentId, reactionBody }, context) => {
       if (context.user) {
-        const updatedThought = await Comment.findOneAndUpdate(
+        const updatedComment = await Comment.findOneAndUpdate(
           { _id: commentId },
           {
             $push: {

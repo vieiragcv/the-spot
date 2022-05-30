@@ -26,18 +26,17 @@ type Comment {
     reactions: [Reaction]
 }
 
+type Preference {
+    _id: ID
+    preferences: String
+    username: String   
+}
+
   type Reaction {
     _id: ID
     reactionBody: String
     createdAt: String
     username: String
-}
-
-
-type Preference {
-    _id: ID
-    preferencesText: String
-    username: String   
 }
 
 type Auth {
@@ -57,7 +56,7 @@ type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addComment(commentText: String!): Comment
-    addPreference(preferencesText: String!): Preference
+    addPreference(preferences: String!): User
     addReaction(commentId: ID!, reactionBody: String!): Comment
     addFriend(friendId: ID!): User
 }
@@ -66,6 +65,3 @@ type Mutation {
 module.exports = typeDefs
 
 
-
-// In mutation you will need an addPreferences function:
-// addPreferences(username: String! preferencesText: String!): Preferences

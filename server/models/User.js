@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+// const { PossibleFragmentSpreadsRule } = require('graphql');
 
 const userSchema = new Schema(
   {
@@ -23,13 +24,13 @@ const userSchema = new Schema(
     },
     descriptionText: {
       type: String,
-      required: 'A little bit about your work in the music industry',
+      required: false,
       minlength: 1,
       maxlength: 350
   },
     category: {
         type: String,
-        required: true,
+        required: false,
         enum: ['Artist', 'Agent', 'Manager', 'AandR', 'Producer', 'Venue', 'Label Rep', 'Studio', 'Event'],
         default: 'Artist'
     },
@@ -37,10 +38,12 @@ const userSchema = new Schema(
         type: String,
         enum: ['Miami', 'Houston', 'New York', 'Las Vegas', 'Los Angeles', 'Atlanta', 'Chicago', 'New Orleans', 'Nashville', 'Baltimore'] 
     },
-    preferences: {
-      type: String,
-      enum: ['Guitar', 'classical', 'acoustic', 'live gigs', 'rnb', 'singer', 'lounge', 'horns', 'piano', 'keyboards', 'synths', 'pop', 'reggae', 'club', 'electronic', 'dance', 'rock', 'band', 'drums', 'percussion']
-    },
+    preferences: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }
+    ],
     friends: [
       {
         type: Schema.Types.ObjectId,
@@ -61,8 +64,6 @@ const userSchema = new Schema(
   }
 );
     
-
-  
 // set up pre-save middleware to create password
 userSchema.pre('save', async function(next) {
   if (this.isNew || this.isModified('password')) {
