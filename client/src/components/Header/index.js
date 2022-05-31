@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Header = () => {
 
 /*   const logout = event => {
@@ -16,6 +17,7 @@ const Header = () => {
           <Link to='/'><h1>The Spot</h1></Link>
           <Link to='/login'>Login</Link>
           <Link to='/signup'>Signup</Link>
+         
         </nav>
       </div>
     </header>

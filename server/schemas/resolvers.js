@@ -135,7 +135,20 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
+    addLocation: async (parent, args, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $push: { location: args.location } },
+          { new: true }
+        )
+
+        return updatedUser;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
   },
+  }
 };
 
 module.exports = resolvers;

@@ -49,6 +49,8 @@ type Query {
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    addLocation(username: String!, location: String!): Auth
+    addDescriptionText(username: String!, descriptionText: String!): Auth
     addComment(commentText: String!): Comment
     addPreference(userId: ID!, preferenceBody: String!): User
     addReaction(commentId: ID!, reactionBody: String!): Comment
