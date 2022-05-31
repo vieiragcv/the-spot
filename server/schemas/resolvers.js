@@ -7,7 +7,11 @@ const resolvers = {
 /*-------------------------------------------------
 -                        QUERY 
 ------------------------------------------------- */
+
   Query: {
+
+    /* ------------------ME ---------------*/
+
     me: async (parent, args, context) => {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
@@ -20,22 +24,27 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in - not getting token");
     },
+
+    /* ------------------ USERS  ---------------*/
+
     users: async () => {
       return User.find()
         .select("-__v -password")
         .populate("comments")
         // .populate("friend");
     },
+
+    /* ------------------USER---------------*/
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select("-__v -password")
         .populate("friends")
         .populate("comments");
     },
-    comments: async (parent, { username }) => {
-      //find byusernme
 
-      //return array of comments
+    /* ------------------COMMENTS---------------*/
+
+    comments: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Comment.find(params).sort({ createdAt: -1 });
     },
@@ -47,7 +56,10 @@ const resolvers = {
   /*-------------------------------------------------
 -                        MUTATION
 ------------------------------------------------- */
+
   Mutation: {
+
+    /* ------------------ADD USER---------------*/
 
     addUser: async (parent, args) => {
       const user = await User.create(args);
@@ -55,6 +67,8 @@ const resolvers = {
 
       return { token, user };
     },
+
+    /* ------------------LOGIN---------------*/
 
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -73,7 +87,9 @@ const resolvers = {
       return { token, user };
     },
 
-    // Create an addPreference Mutation //
+
+
+    /* ------------------ADD COMMENT---------------*/
 
     addComment: async (parent, args, context) => {
       if (context.user) {
@@ -89,6 +105,8 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
+
+    /* ------------------ADD REACTION ---------------*/
 
     addReaction: async (parent, { commentId, reactionBody }, context) => {
       if (context.user) {
@@ -108,6 +126,8 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     
+    /* ------------------ADD FRIEND---------------*/
+
     addFriend: async (parent, { friendId }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
@@ -118,7 +138,6 @@ const resolvers = {
 
         return updatedUser;
       }
-
       throw new AuthenticationError("You need to be logged in!");
     },
   },
