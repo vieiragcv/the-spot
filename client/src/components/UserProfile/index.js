@@ -1,34 +1,29 @@
 import React from 'react';
-/* import { Link } from 'react-router-dom'; */
+
 
 /*------------------------------------------------------------
 -          COMPONENT: USER PROFILE
 ------------------------------------------------------------*/
 
+
 const UserProfile = ({ username }) => {
+
+/*   const { username: userParam } = useParams();
+
+  const { loading, data } = useQuery(QUERY_USER, {
+    variables: { username: userParam}
+  });
+
+  const user = data?.user || {};
+  console.log(user); */
+
+/*   if (loading) {
+    return <div> Content is Loading....</div>
+  } */
 
   return (
     <div className=''>
-      <div className=''>
-        <h5>{username}</h5>
-        <p>Image</p>
-        <p>soundcloud link</p>
-        <p>spotify link</p>
-      </div>
-
-      <div className=''>
-        <p>Image</p>
-        <p>soundcloud link</p>
-        <p>spotify link</p>
-      </div>
-
-      <div className=''>
-        <p>OpenBio</p>
-        <p>ClosedBio</p>
-      </div>   
-    <div>
-      <p>Location</p>
-    </div>
+      <h3>{username}</h3>
   </div>
   );
 };

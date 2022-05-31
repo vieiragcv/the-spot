@@ -1,6 +1,7 @@
 import Auth from '../../utils/auth';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 /*------------------------------------------------------------
 -           COMPONENT: HEADER
@@ -21,14 +22,14 @@ const Header = () => {
           <Link to='/'><h1>The Spot</h1></Link>
           {Auth.loggedIn() ? (
             <>
+              <Link to='/profile'>My Profile</Link>
               <Link to='/inbox'>Inbox</Link>
-              <Link to='/'>Home</Link>
               <a href='/' onClick={logout}>Logout</a>
             </>
           ) : (
             <>
               <Link to='/login'>Login</Link>
-              <Link to='/signup'>Signup</Link>
+              <Link to='/signup'>Sign Up</Link>
             </>
           )}
         </nav>

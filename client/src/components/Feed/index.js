@@ -1,6 +1,8 @@
-/* import Auth from '../../utils/auth'; */
 import React from 'react';
-/* import { Link } from 'react-router-dom'; */
+
+/*------------------------------------------------------------
+-          COMPONENT: FEED
+------------------------------------------------------------*/
 
 const Feed = ({ comments, title }) => {
 
