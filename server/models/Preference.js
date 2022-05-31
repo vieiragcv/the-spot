@@ -1,11 +1,11 @@
-
-const { Schema, model } = require('mongoose');
+const { Schema } = require('mongoose');
 
 const preferenceSchema = new Schema(
   {
-    preferences: {
+    preferenceBody: {
       type: String,
-      enum: ['Guitar', 'classical', 'acoustic', 'live gigs', 'rnb', 'singer', 'lounge', 'horns', 'piano', 'keyboards', 'synths', 'pop', 'reggae', 'club', 'electronic', 'dance', 'rock', 'band', 'drums', 'percussion']
+      required: true,
+      maxlength: 100
     },
     username: {
       type: String,
@@ -13,10 +13,12 @@ const preferenceSchema = new Schema(
     }
   });
   
-preferenceSchema.virtual('preferenceCount').get(function() {
-  return this.preference.length;
-});
+// preferenceSchema.virtual('preferenceCount').get(function() {
+//   return this.preference.length;
+// });
 
-const Preference = model('Preference', preferenceSchema);
 
-module.exports = Preference;
+module.exports = preferenceSchema;
+
+
+// enum: ['Guitar', 'classical', 'acoustic', 'live gigs', 'rnb', 'singer', 'lounge', 'horns', 'piano', 'keyboards', 'synths', 'pop', 'reggae', 'club', 'electronic', 'dance', 'rock', 'band', 'drums', 'percussion', 'competition', 'topline', 'restaurant/bar', 'choral', 'standards', 'festival', 'residency', 'church', 'Baltimore', 'Chicago', 'Agent', 'producer', 'New York', 'Miami', 'Nashville', 'background vocalist', 'audition'],

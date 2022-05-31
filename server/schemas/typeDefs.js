@@ -26,11 +26,13 @@ type Comment {
     createdAt: String
     username: String
 }
-type Preference {
+
+  type Preference {
     _id: ID
-    preferencesText: String
+    preferenceBody: String
     username: String   
 }
+
 type Auth {
     token: ID!
     user: User
@@ -43,11 +45,12 @@ type Query {
     preferences(username: String): [User]
     comments(username: String): [Comment]
 }
+
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addComment(commentText: String!): Comment
-    addPreference(preferencesText: String!): Preference
+    addPreference(userId: ID!, preferenceBody: String!): User
     addReaction(commentId: ID!, reactionBody: String!): Comment
     addFriend(friendId: ID!): User
 }

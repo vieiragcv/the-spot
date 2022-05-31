@@ -1,25 +1,27 @@
-/* import Auth from '../../utils/auth'; */
-import React from 'react';
+import React from 'react'
 import { Link } from 'react-router-dom';
+import React, { Component } from 'react'
+import Select from 'react-select'
 
-const Location = () => {
+const options = [
+  { value: 'Miami', label: 'Miami'},
+  { value: 'Houston', label: 'Houston'},
+  { value: 'New York', label: 'New York'},
+  { value: 'Las Vegas', label: 'Las Vegas'},
+  { value: 'Los Angeles', label: 'Los Angeles'},
+  { value: 'Atlanta', label: 'Atlanta'},
+  { value: 'Chicago', label: 'Chicago'},
+  { value: 'New Orleans', label: 'New Orleans'},
+  { value: 'Baltimore', label: 'Baltimore'},
+  { value: 'Nashville', label: 'Nashville'}
+]
 
-/*   const logout = event => {
-    event.preventDefault();
-  }; */
-  
-  return (
-    <header className="flex-row align-center container " >
-      <div className="flex-row justify-space-between-sm justify-center align-center">
-        
-        <nav className='text-center'>
-          <Link to='/'><h1>The Spot</h1></Link>
-          <Link to='/login'>Login</Link>
-          <Link to='/signup'>Signup</Link>
-        </nav>
-      </div>
-    </header>
-  );
-};
+
+const Location = () => (
+    <Select options={options} />
+
+);
+
+
 
 export default Location;
