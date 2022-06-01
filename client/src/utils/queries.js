@@ -16,14 +16,16 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      friendCount
+      descriptionText
+      category
+      preferences
       friends {
         _id
         username
       }
-      thoughts {
+      comments {
         _id
-        thoughtText
+        commentText
         createdAt
         reactionCount
       }

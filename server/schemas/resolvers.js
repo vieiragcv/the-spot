@@ -35,6 +35,7 @@ const resolvers = {
     },
 
     /* ------------------USER---------------*/
+
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select("-__v -password")
@@ -53,7 +54,7 @@ const resolvers = {
     // }
   },
 
-  /*-------------------------------------------------
+/*-------------------------------------------------
 -                        MUTATION
 ------------------------------------------------- */
 
@@ -86,8 +87,6 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-
-
 
     /* ------------------ADD COMMENT---------------*/
 
