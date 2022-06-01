@@ -1,38 +1,34 @@
 import React from 'react';
+import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
-import Auth from '../utils/auth';
-
 
 /*------------------------------------------------------
--                     PAGES: PROFILE
+-                     PROFILE (PAGES) 
 ------------------------------------------------------*/
 
-import UserProfile from '../components/UserProfile';
-const Profile = () => {
+const Profile = (props) => {
   
-/*----------------USERNAME (gui, etc)-----------------*/
-
   const user = Auth.getProfile();
   const username = user.data.username;
-  const email = user.data.email;
+  console.log(username);
 
-/*----------------CATEGORY (artist, etc)------------------*/
-
-  const { data } = useQuery(QUERY_USER, {
-    variables: { username: username }
+  const { loading, error, data } = useQuery(QUERY_USER, {
+    variables: { username }
   });
-  const userCategory = data.user.category;
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
+  console.log(data);
   
-/*----------------OPEN BIO ---------------------------*/
+
 
   /* const userOpenBio = data.user.userOpenBio; */
 
-/*----------------CLOSED BIO -------------------------*/
+
 
   /* const userClosedBio = data.user.closedBio; */
 
-/*-----------------PROFILE IMG------------------------*/
+
 
   /* const userImage = data.user.userImg; */ 
 
@@ -40,17 +36,22 @@ const Profile = () => {
     <div>
       <div className="flex-row mb-3">
         <h2 className="">
-          This is {username}'s profile, his email is {email}. He is an {userCategory}
+          {data.user.username}
+        </h2>
+        <h2 className="">
+          {data.user.email}
+        </h2>
+        <h2 className="">
+          {data.user.category}
         </h2>
       </div>
 
       <div className="flex-row justify-space-between mb-3">
         <div className="col-12 mb-3 col-lg-8">
-          <UserProfile />
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default Profile;

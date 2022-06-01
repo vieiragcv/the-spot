@@ -16,7 +16,8 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      descriptionText
+      openBio
+      closedBio
       category
       preferences
       friends {
