@@ -1,4 +1,5 @@
 import React from 'react';
+import './assets/profile.css'
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 import Auth from '../utils/auth';

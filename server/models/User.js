@@ -21,13 +21,13 @@ const userSchema = new Schema(
       unique: true,
       minlength: 5
     },
-    descriptionText: {
+    bio: {
       type: String,
       required: false,
       minlength: 1,
       maxlength: 350
     },
-    closedDescriptionText: {
+    contact: {
       type: String,
       required: false,
       minlength: 1,

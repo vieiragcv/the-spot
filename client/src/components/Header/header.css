@@ -1,9 +1,20 @@
 nav {
+  display: inline-flex;
+  justify-content: space-between; 
   padding: 1.5rem;
   font-weight: bold;
   font-size: 1.5rem;
 }
 
+.spot__img {
+    /* position: relative; */
+    align-items: right;
+    border-radius: 2rem;
+    /* margin: 2rem 2rem; */
+    overflow: hidden;
+}
+
 nav h1 {
-  padding: 1rem;
+    align-items: left;
+    padding: 1rem;
 }
