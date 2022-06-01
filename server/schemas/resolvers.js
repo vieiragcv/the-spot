@@ -5,7 +5,7 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
 
 /*-------------------------------------------------
--                        QUERY 
+-                  RESOLVERS (QUERY) 
 ------------------------------------------------- */
 
   Query: {
@@ -31,7 +31,7 @@ const resolvers = {
       return User.find()
         .select("-__v -password")
         .populate("comments")
-        // .populate("friend");
+        .populate("friend");
     },
 
     /* ------------------USER---------------*/
@@ -43,15 +43,19 @@ const resolvers = {
         .populate("comments");
     },
 
+
+
     /* ------------------COMMENTS---------------*/
 
     comments: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Comment.find(params).sort({ createdAt: -1 });
     },
+
     // comments: async (parent, { _id }) => {
     //   return Comment.findOne({ _id });
     // }
+
   },
 
 /*-------------------------------------------------
@@ -174,6 +178,34 @@ const resolvers = {
         return updatedUser;
       }
       throw new AuthenticationError("You need to be logged in!");
+    },
+
+    /* ------------------ADD OPEN BIO---------------*/
+
+    addOpenBio: async (parent, {username, openBio}, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { username: `${username}` }, //filter
+          { openBio: `${openBio}` }, //update
+          { new: true } // returns document after update
+        );
+        return updatedUser;
+      }
+      throw new AuthenticationError("You need to be logged in! addOpenBio");
+    },
+    
+    /* ------------------ADD CLOSED BIO---------------*/
+
+    addClosedBio: async (parent, {username, closedBio}, context) => {
+      if(context.user) {
+        const updateUser = await User.findOneAndUpdate(
+          { username: `${username}` },
+          { closedBio: `${closedBio}`},
+          { new: true }
+        );
+        return updateUser;
+      }
+      throw new AuthenticationError("You need to be logged in! addClosedBio");
     }
   }
 };

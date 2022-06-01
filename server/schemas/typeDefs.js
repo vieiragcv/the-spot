@@ -54,7 +54,8 @@ type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addLocation(username: String!, location: String!): Auth
-    addDescriptionText(username: String!, descriptionText: String!): Auth
+    addOpenBio(username: String!, openBio: String!): User
+    addClosedBio(username: String!, closedBio: String!): User
     addComment(commentText: String!): Comment
     addPreference(userId: ID!, preferenceBody: String!): User
     addReaction(commentId: ID!, reactionBody: String!): Comment

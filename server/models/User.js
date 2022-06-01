@@ -1,6 +1,10 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
+/*------------------------------------------------------
+-                     SCHEMA: USER
+------------------------------------------------------*/
+
 const userSchema = new Schema(
   {
     username: {
