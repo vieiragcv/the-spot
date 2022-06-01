@@ -49,7 +49,8 @@ const userSchema = new Schema(
         enum: ['Miami', 'Houston', 'New York', 'Las Vegas', 'Los Angeles', 'Atlanta', 'Chicago', 'New Orleans', 'Nashville', 'Baltimore'] 
     },
     preferences: {
-      type: String,
+      type: Schema.Types.ObjectId,
+      ref: 'Preferences',
       enum: ['Guitar', 'classical', 'acoustic', 'live gigs', 'rnb', 'singer', 'lounge', 'horns', 'piano', 'keyboards', 'synths', 'pop', 'reggae', 'club', 'electronic', 'dance', 'rock', 'band', 'drums', 'percussion']
     },
     friends: [
