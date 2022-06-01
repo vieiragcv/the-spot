@@ -20,21 +20,12 @@ const Profile = (props) => {
   if (error) return `Error! ${error.message}`;
   console.log(data);
   
-
-
-  /* const userOpenBio = data.user.userOpenBio; */
-
-
-
-  /* const userClosedBio = data.user.closedBio; */
-
-
-
   /* const userImage = data.user.userImg; */ 
 
   return(
     <div>
       <div className="flex-row mb-3">
+
         <h2 className="">
           {data.user.username}
         </h2>
@@ -44,6 +35,13 @@ const Profile = (props) => {
         <h2 className="">
           {data.user.category}
         </h2>
+        <h2 className="">
+          {data.user.openBio}
+        </h2>
+        <h2 className="">
+          {data.user.closedBio}
+        </h2>
+        
       </div>
 
       <div className="flex-row justify-space-between mb-3">
