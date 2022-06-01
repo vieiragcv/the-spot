@@ -24,11 +24,11 @@ type Comment {
     reactions: [Reaction]
 }
 
-  type Reaction {
-    _id: ID
-    reactionBody: String
-    createdAt: String
-    username: String
+type Reaction {
+_id: ID
+reactionBody: String
+createdAt: String
+username: String
 }
 
 type Preference {

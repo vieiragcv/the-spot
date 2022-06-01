@@ -10,8 +10,6 @@ const resolvers = {
 
   Query: {
 
-    /* ------------------ME ---------------*/
-
     me: async (parent, args, context) => {
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id })
@@ -25,16 +23,12 @@ const resolvers = {
       throw new AuthenticationError("Not logged in - not getting token");
     },
 
-    /* ------------------ USERS  ---------------*/
-
     users: async () => {
       return User.find()
         .select("-__v -password")
         .populate("comments")
         .populate("friend");
     },
-
-    /* ------------------USER---------------*/
 
     user: async (parent, { username }) => {
       return User.findOne({ username })
@@ -43,28 +37,17 @@ const resolvers = {
         .populate("comments");
     },
 
-
-
-    /* ------------------COMMENTS---------------*/
-
     comments: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Comment.find(params).sort({ createdAt: -1 });
     },
-
-    // comments: async (parent, { _id }) => {
-    //   return Comment.findOne({ _id });
-    // }
-
   },
 
 /*-------------------------------------------------
--                        MUTATION
+-                      MUTATIONS
 ------------------------------------------------- */
 
   Mutation: {
-
-    /* ------------------ADD USER---------------*/
 
     addUser: async (parent, args) => {
       const user = await User.create(args);
@@ -72,8 +55,6 @@ const resolvers = {
 
       return { token, user };
     },
-
-    /* ------------------LOGIN---------------*/
 
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -92,8 +73,6 @@ const resolvers = {
       return { token, user };
     },
 
-    /* ------------------ADD PREFERENCE---------------*/
-
     addPreference: async (parent, { userId, preferenceBody }, context) => {
       console.log(preferenceBody)
       if (context.user) {
@@ -106,14 +85,10 @@ const resolvers = {
           },
           { new: true, runValidators: true }
         );
-
         return updatedPreferences;
       }
-
       throw new AuthenticationError("You need to be logged in!");
     },
-
-    /* ------------------ADD COMMENT---------------*/
 
     addComment: async (parent, args, context) => {
       if (context.user) {
@@ -129,8 +104,6 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
-
-    /* ------------------ADD REACTION ---------------*/
 
     addReaction: async (parent, { commentId, reactionBody }, context) => {
       if (context.user) {
@@ -149,8 +122,6 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
-    
-    /* ------------------ADD FRIEND---------------*/
 
     addFriend: async (parent, { friendId }, context) => {
       if (context.user) {
@@ -165,8 +136,6 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
 
-    /* ------------------ADD LOCATION---------------*/
-
     addLocation: async (parent, args, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
@@ -180,9 +149,7 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
 
-    /* ------------------ADD OPEN BIO---------------*/
-
-    addOpenBio: async (parent, {username, openBio}, context) => {
+    addOpenBio: async (parent, { username, openBio }, context) => {
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { username: `${username}` }, //filter
@@ -194,14 +161,12 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in! addOpenBio");
     },
     
-    /* ------------------ADD CLOSED BIO---------------*/
-
     addClosedBio: async (parent, {username, closedBio}, context) => {
       if(context.user) {
         const updateUser = await User.findOneAndUpdate(
-          { username: `${username}` },
-          { closedBio: `${closedBio}`},
-          { new: true }
+          { username: username }, //filter
+          { closedBio: closedBio }, //update
+          { new: true } // returns document after update
         );
         return updateUser;
       }

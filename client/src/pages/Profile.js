@@ -1,6 +1,6 @@
 import React from 'react';
 import Auth from '../utils/auth';
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 
 /*------------------------------------------------------
@@ -11,10 +11,12 @@ const Profile = (props) => {
   
   const user = Auth.getProfile();
   const username = user.data.username;
+  console.log(username);
 
   const { loading, error, data } = useQuery(QUERY_USER, {
     variables: { username }
   });
+  
   console.log(data);
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
