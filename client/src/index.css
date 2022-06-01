@@ -1,10 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500&family=Open+Sans:wght@300;400;500&display=swap');
+
 :root {
-  --primary: #f24500;
-  --secondary: #fec23c;
-  --tertiary: #ffd873;
-  --quatrinary: #fef4b7;
-  --light: #e1f5f4;
-  --dark: #a8a37b;
+  --primary: #ea7040;
+  --secondary: #9ebd86;
+  --light: #d6d6c8;
+  --background: #52514d;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
   --spacing-one: calc(1rem * 0.25);
@@ -26,23 +26,24 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Comfortaa', 'Open Sans', sans-serif;
   font-weight: 50;
   line-height: 1.5;
   font-size: 20px;
   color: var(--primary);
-  background-color: var(--light);
+  background-color: var(--background);
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-weight: 100;
+  font-family: 'Comfortaa', 'Open Sans', sans-serif;
+  font-weight: 500 bold;
   margin: 5px 0;
   line-height: 1.25;
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 3rem;
+  text-align: left;
 }
 
 h2 {
@@ -1130,4 +1131,3 @@ nav a:hover {
     align-items: center;
   }
 }
-

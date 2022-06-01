@@ -1,6 +1,7 @@
 import Auth from '../../utils/auth';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './header.css'
 
 /*------------------------------------------------------------
 -           COMPONENT: HEADER
