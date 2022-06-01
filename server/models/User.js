@@ -1,6 +1,10 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
+/*------------------------------------------------------
+-                     SCHEMA: USER
+------------------------------------------------------*/
+
 const userSchema = new Schema(
   {
     username: {
@@ -21,13 +25,13 @@ const userSchema = new Schema(
       unique: true,
       minlength: 5
     },
-    descriptionText: {
+    openBio: {
       type: String,
       required: false,
       minlength: 1,
       maxlength: 350
     },
-    closedDescriptionText: {
+    closedBio: {
       type: String,
       required: false,
       minlength: 1,
