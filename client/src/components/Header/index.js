@@ -22,16 +22,24 @@ const Header = () => {
             <h1>
               The Spot{" "}
               <span className="spot__img">
-                <img src={SPOT} alt="Record" />
+                <img id="record" src={SPOT} alt="Record" />
               </span>
             </h1>
           </Link>
           {Auth.loggedIn() ? (
             <>
+            <li>
               <Link to='/profile'>My Profile</Link>
+              </li>
+              <li>
               <Link to='/inbox'>Inbox</Link>
+              </li>
+              <li>
               <a href='/' onClick={logout}>Logout</a>
+              </li>
+              <li>
               <Link to='/myaccount'>My Account</Link>
+              </li>
             </>
           ) : (
             <>
