@@ -28,15 +28,10 @@ const Header = () => {
           </Link>
           {Auth.loggedIn() ? (
             <>
-            <li>
-              <Link to="/profile">My Profile</Link>
-              </li>
-              <li>
-              <Link to="/inbox">Inbox</Link>
-              </li>
-              <a href="/" onClick={logout}>
-                Logout
-              </a>
+              <Link to='/profile'>My Profile</Link>
+              <Link to='/inbox'>Inbox</Link>
+              <a href='/' onClick={logout}>Logout</a>
+              <Link to='/myaccount'>My Account</Link>
             </>
           ) : (
             <>

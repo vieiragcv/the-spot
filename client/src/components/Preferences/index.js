@@ -7,7 +7,7 @@ import React from 'react';
 ------------------------------------------------------------*/
 
 
-const Preferences = () => {
+const Preferences = (props) => {
   
   return (
     <div className=''>

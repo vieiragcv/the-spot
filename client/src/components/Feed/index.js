@@ -20,37 +20,32 @@ const Feed = ({ comments }) => {
   }
 
   return (
-    <Swiper
-    direction={"vertical"}
-    pagination={{
-      clickable: true,
-    }}
-    modules={[Pagination]}
-    className="container feed__container">
-     
-      <div className="feed__card">
+    <div className ='card-header'>
+      <h3>Popular in Your Area</h3>
+      {comments && 
+        comments.map(comment => (
 
-        {comments &&
-          comments.map((comment) => { return (
-            <SwiperSlide key={comment._id} className="card mb-3">
-              <p className="card-header">
-                {comment.username} commented on {comment.createdAt}
+          <div key={comment._id} className='card mb-3'>
+            
+            <p className=''>
+            {comment.createdAt}: {comment.username} shared...
+            </p>
+
+            <div className='card-body'>
+
+              <p>{comment.commentText}</p>
+              
+              <p className="mb-0">
+                Replies: {comment.reactionCount} || Click to {' '}
+                {comment.reactionCount ? 'see' : 'start'} the discussion!
               </p>
-              <div className="card-body">
-                <p>{comment.commentText}</p>
-                <p className="mb-0">
-                  Reactions: {comment.reactionCount} || Click to{" "}
-                  {comment.reactionCount ? "see" : "start"} the discussion!
-                </p>
-              </div>
-            </SwiperSlide> 
-          )}
-          )}
-          
-          
-      </div>
-    </Swiper>
-  );
+
+            </div>
+
+          </div>
+      ))}
+    </div>
+  )
 };
 
 export default Feed;

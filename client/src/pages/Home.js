@@ -19,22 +19,19 @@ const Home = () => {
 
   const { data: userData} = useQuery(QUERY_USER);
   const username = userData?.user || {};
-  console.log(username);
+/*   console.log(username); */
 
 
-  const loggedIn = Auth.loggedIn();
   
   return (
     <main>
-      {loggedIn &&  (
-        <Preferences />
-      )}
       {loading ? (
         <div>Loading...</div>
       ) : (
         <div>
           <UserProfile
-            username={username.user} />
+            username={username.user} 
+            />
           <Feed
             comments={comments}
           />

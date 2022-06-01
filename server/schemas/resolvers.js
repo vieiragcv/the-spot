@@ -5,7 +5,7 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
 
 /*-------------------------------------------------
--                        QUERY 
+-                  RESOLVERS (QUERY) 
 ------------------------------------------------- */
 
   Query: {
@@ -31,7 +31,7 @@ const resolvers = {
       return User.find()
         .select("-__v -password")
         .populate("comments")
-        // .populate("friend");
+        .populate("friend");
     },
 
     /* ------------------USER---------------*/
@@ -43,15 +43,19 @@ const resolvers = {
         .populate("comments");
     },
 
+
+
     /* ------------------COMMENTS---------------*/
 
     comments: async (parent, { username }) => {
       const params = username ? { username } : {};
       return Comment.find(params).sort({ createdAt: -1 });
     },
+
     // comments: async (parent, { _id }) => {
     //   return Comment.findOne({ _id });
     // }
+
   },
 
 /*-------------------------------------------------
@@ -88,6 +92,27 @@ const resolvers = {
       return { token, user };
     },
 
+    /* ------------------ADD PREFERENCE---------------*/
+
+    addPreference: async (parent, { userId, preferenceBody }, context) => {
+      console.log(preferenceBody)
+      if (context.user) {
+        const updatedPreferences = await User.findOneAndUpdate(
+          { _id: userId },
+          {
+            $push: {
+              preferences: { preferenceBody, username: context.user.username },
+            },
+          },
+          { new: true, runValidators: true }
+        );
+
+        return updatedPreferences;
+      }
+
+      throw new AuthenticationError("You need to be logged in!");
+    },
+
     /* ------------------ADD COMMENT---------------*/
 
     addComment: async (parent, args, context) => {
@@ -109,7 +134,7 @@ const resolvers = {
 
     addReaction: async (parent, { commentId, reactionBody }, context) => {
       if (context.user) {
-        const updatedThought = await Comment.findOneAndUpdate(
+        const updatedComment = await Comment.findOneAndUpdate(
           { _id: commentId },
           {
             $push: {
@@ -139,7 +164,50 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
-  },
+
+    /* ------------------ADD LOCATION---------------*/
+
+    addLocation: async (parent, args, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $push: { location: args.location } },
+          { new: true }
+        )
+
+        return updatedUser;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+
+    /* ------------------ADD OPEN BIO---------------*/
+
+    addOpenBio: async (parent, {username, openBio}, context) => {
+      if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+          { username: `${username}` }, //filter
+          { openBio: `${openBio}` }, //update
+          { new: true } // returns document after update
+        );
+        return updatedUser;
+      }
+      throw new AuthenticationError("You need to be logged in! addOpenBio");
+    },
+    
+    /* ------------------ADD CLOSED BIO---------------*/
+
+    addClosedBio: async (parent, {username, closedBio}, context) => {
+      if(context.user) {
+        const updateUser = await User.findOneAndUpdate(
+          { username: `${username}` },
+          { closedBio: `${closedBio}`},
+          { new: true }
+        );
+        return updateUser;
+      }
+      throw new AuthenticationError("You need to be logged in! addClosedBio");
+    }
+  }
 };
 
 module.exports = resolvers;

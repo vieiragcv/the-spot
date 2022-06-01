@@ -25,3 +25,19 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_OPEN_BIO = gql`
+  mutation addOpenBio($username: String!, $openBio: String!) {
+    addOpenBio(username: $username, openBio: $openBio) {
+      openBio
+    }
+  }
+`;
+
+export const ADD_CLOSED_BIO = gql`
+  mutation addClosedBio($username: String!, $openBio: String!) {
+    addClosedBio(username: $username, closedBio: $closedBio) {
+      closedBio
+    }
+  }
+`;
