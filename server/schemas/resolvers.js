@@ -69,6 +69,7 @@ const resolvers = {
     // Create an addPreference Mutation //
 
     addPreference: async (parent, { userId, preferenceBody }, context) => {
+      console.log(preferenceBody)
       if (context.user) {
         const updatedPreferences = await User.findOneAndUpdate(
           { _id: userId },
@@ -150,5 +151,6 @@ const resolvers = {
   },
   }
 };
+
 
 module.exports = resolvers;
