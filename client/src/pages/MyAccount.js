@@ -1,13 +1,17 @@
 import React from 'react';
 import Auth from '../utils/auth';
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 
 /*------------------------------------------------------
--                     PROFILE (PAGES) 
+
+-                     MY ACCOUNT (PAGES) 
+
+- currently a copy of Profile  
+- will beused to edit user fields
 ------------------------------------------------------*/
 
-const Profile = (props) => {
+const MyAccount = (props) => {
   
   const user = Auth.getProfile();
   const username = user.data.username;
@@ -45,4 +49,4 @@ const Profile = (props) => {
   );
 };
 
-export default Profile;
+export default MyAccount;

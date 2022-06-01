@@ -25,6 +25,7 @@ const Header = () => {
               <Link to='/profile'>My Profile</Link>
               <Link to='/inbox'>Inbox</Link>
               <a href='/' onClick={logout}>Logout</a>
+              <Link to='/myaccount'>My Account</Link>
             </>
           ) : (
             <>
