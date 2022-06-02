@@ -27,7 +27,7 @@ const resolvers = {
       return User.find()
         .select("-__v -password")
         .populate("comments")
-        .populate("friend");
+        .populate("friends");
     },
 
     user: async (parent, { username }) => {

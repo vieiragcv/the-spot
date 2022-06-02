@@ -25,10 +25,10 @@ type Comment {
 }
 
 type Reaction {
-_id: ID
-reactionBody: String
-createdAt: String
-username: String
+    _id: ID
+    reactionBody: String
+    createdAt: String
+    username: String
 }
 
 type Preference {

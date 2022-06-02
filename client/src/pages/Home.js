@@ -1,15 +1,16 @@
 import React from 'react';
-import Preferences from '../components/Preferences';
-import UserProfile from '../components/UserProfile';
+import UserProfiles from '../components/UserProfiles';
 import Feed from '../components/Feed';
 
+/* import Preferences from '../components/Preferences'; */
+/* import Auth from '../utils/auth'; */
 
 /*------------------------------------------------------------
 -                     PAGES: HOME
 ------------------------------------------------------------*/
-import Auth from '../utils/auth';
+
 import { useQuery } from '@apollo/client';
-import { QUERY_COMMENTS, QUERY_USER } from '../utils/queries';
+import { QUERY_COMMENTS } from '../utils/queries';
 
 const Home = () => {
 
@@ -17,25 +18,23 @@ const Home = () => {
   const comments = data?.comments || [];
   console.log(comments);
 
-  const { data: userData} = useQuery(QUERY_USER);
-  const username = userData?.user || {};
-/*   console.log(username); */
-
-
-  
-  return (
+    return (
     <main>
       {loading ? (
         <div>Loading...</div>
       ) : (
-        <div>
-          <UserProfile
-            username={username.user} 
-            />
-          <Feed
-            comments={comments}
-          />
+
+        <div className='grid-container'>
+          
+          <div className=''>
+            <UserProfiles  />
+          </div>
+
+          <div className=''>
+            <Feed />
+          </div>
         </div>
+
       )}
     </main>
   );
