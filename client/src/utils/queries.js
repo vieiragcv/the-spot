@@ -34,8 +34,20 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_COMMENTS = gql`
+export const QUERY_USERS = gql`
+  query users {
+    users {
+      username
+      email
+      openBio
+      closedBio
+      category
+      location
+    }
+  }
+`;
 
+export const QUERY_COMMENTS = gql`
   query comments($username: String) {
     comments(username: $username) {
       _id

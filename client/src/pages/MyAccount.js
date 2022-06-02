@@ -1,7 +1,8 @@
-import React from "react";
-import Auth from "../utils/auth";
-import { useQuery, useMutation } from "@apollo/client";
-import { QUERY_USER } from "../utils/queries";
+
+import React from 'react';
+import Auth from '../utils/auth';
+import { useQuery } from '@apollo/client';
+import { QUERY_USER } from '../utils/queries';
 
 /*------------------------------------------------------
 
