@@ -3,8 +3,8 @@ import Auth from '../utils/auth';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
-import AVATAR1 from './assets/images/jcooperavatar.jpg'
-import './assets/profile.css'
+import AVATAR1 from './assets/images/jcooperavatar.jpg';
+import './assets/profile.css';
 
 /*------------------------------------------------------
 -                     PROFILE (PAGES) 

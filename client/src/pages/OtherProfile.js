@@ -14,13 +14,14 @@ const OtherProfile = (props) => {
 
   const { username: userParam } = useParams();
   console.log(userParam);
+
   
-  const loggedUser = Auth.getProfile();
-  const username = loggedUser.data.username;
-  console.log(username);
+ /*  const loggedUser = Auth.getProfile(); */
+/*   const username = loggedUser.data.username; */
+ /*  console.log(username); */
 
   const { loading, error, data } = useQuery(QUERY_USER, {
-    variables: { username }
+    variables: { username: userParam }
   });
 
   if (loading) return 'Loading...';

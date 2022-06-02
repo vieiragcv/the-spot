@@ -36,7 +36,7 @@ const Header = () => {
           {Auth.loggedIn() ? (
             <>
             <li>
-              <Link to='/profile/:username'>My Profile</Link>
+              <Link to='/myprofile'>My Profile</Link>
               </li>
               <li>
               <Link to='/inbox'>Inbox</Link>
