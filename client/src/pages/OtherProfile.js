@@ -10,7 +10,7 @@ import './assets/profile.css'
 -                     PROFILE (PAGES) 
 ------------------------------------------------------*/
 
-const Profile = (props) => {
+const OtherProfile = (props) => {
 
   const { username: userParam } = useParams();
   console.log(userParam);
@@ -45,4 +45,4 @@ const Profile = (props) => {
   );
 };
 
-export default Profile;
+export default OtherProfile;

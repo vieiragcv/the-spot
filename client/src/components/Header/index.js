@@ -9,6 +9,8 @@ import SPOT from "../../pages/assets/images/vinyl.svg";
 ------------------------------------------------------------*/
 
 const Header = () => {
+
+
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
@@ -34,7 +36,7 @@ const Header = () => {
           {Auth.loggedIn() ? (
             <>
             <li>
-              <Link to='/profile'>My Profile</Link>
+              <Link to='/profile/:username'>My Profile</Link>
               </li>
               <li>
               <Link to='/inbox'>Inbox</Link>

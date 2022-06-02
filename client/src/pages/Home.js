@@ -5,13 +5,12 @@ import Feed from '../components/Feed';
 
 /* import Preferences from '../components/Preferences'; */
 import Auth from '../utils/auth';
+import { useQuery } from '@apollo/client';
+import { QUERY_COMMENTS } from '../utils/queries';
 
 /*------------------------------------------------------------
 -                     PAGES: HOME
 ------------------------------------------------------------*/
-
-import { useQuery } from '@apollo/client';
-import { QUERY_COMMENTS } from '../utils/queries';
 
 const Home = () => {
 
