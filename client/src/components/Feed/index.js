@@ -1,14 +1,5 @@
 import React from "react";
 import "./feed.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import {Pagination} from "swiper";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
-// import required modules
-
 
 /*------------------------------------------------------------
 -          COMPONENT: FEED

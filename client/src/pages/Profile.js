@@ -2,13 +2,17 @@ import React from 'react';
 import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
+import './assets/profile.css'
+import AVATAR1 from './assets/images/jcooperavatar.jpg'
+
+
 
 /*------------------------------------------------------
 -                     PROFILE (PAGES) 
 ------------------------------------------------------*/
 
 const Profile = (props) => {
-  
+
   const user = Auth.getProfile();
   const username = user.data.username;
 
@@ -20,28 +24,20 @@ const Profile = (props) => {
   if (error) return `Error! ${error.message}`;
   
   return(
-    <div>
-      <div className="flex-row mb-3">
-        <h2 className="">
-          {data.user.username}
-        </h2>
-        <h2 className="">
-          {data.user.email}
-        </h2>
-        <h2 className="">
-          {data.user.category}
-        </h2>
-        <h2 className="">
-          {data.user.openBio}
-        </h2>
-        <h2 className="">
-          {data.user.closedBio}
-        </h2>
-        <h2 className="">
-          {data.user.preferences}
-        </h2>
-      </div>
-    </div>
+   <section className="profile__container">
+     <div className="profile__card">
+     <article className="profile__bio"><h5>About Me:</h5>
+        <p>{data.user.openBio}</p>
+        <h5>Preferences:</h5>
+        <p>{data.user.preferences}</p>
+        </article>
+       <div>
+         <img className="profile__images" src={AVATAR1}/>
+        </div>
+        <caption><h3>{data.user.username}</h3></caption>
+        <caption><h4>{data.user.category}</h4></caption>
+     </div>
+   </section>
   );
 };
 
