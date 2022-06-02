@@ -1,12 +1,12 @@
 import Auth from '../utils/auth';
 import React, { useState } from 'react';
+import './assets/signup.css';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
 /*------------------------------------------------------------
 -         PAGES : SIGNUP
 ------------------------------------------------------------*/
-
 
 const Signup = () => {
   const [formState, setFormState] = useState({ username: '', email: '', password: '' });

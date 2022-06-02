@@ -24,7 +24,7 @@ type Comment {
     reactions: [Reaction]
 }
 
-  type Reaction {
+type Reaction {
     _id: ID
     reactionBody: String
     createdAt: String
