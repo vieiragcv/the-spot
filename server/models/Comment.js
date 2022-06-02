@@ -2,12 +2,11 @@ const { Schema, model } = require('mongoose');
 const reactionSchema = require('./Reaction');
 const dateFormat = require('../utils/dateFormat');
 
-
 const commentSchema = new Schema(
   {
     commentText: {
       type: String,
-      required: 'You need to leave a thought!',
+      required: true,
       minlength: 1,
       maxlength: 280
     },
@@ -18,7 +17,7 @@ const commentSchema = new Schema(
     },
     username: {
       type: String,
-      required: true
+      required: false
     },
     reactions: [reactionSchema]
   },
@@ -29,15 +28,6 @@ const commentSchema = new Schema(
   }
 );
 
-<<<<<<<< HEAD:server/models/Thought.js
-thoughtSchema.virtual('reactionCount').get(function() {
-  return this.reactions.length;
-});
-
-const Thought = model('Thought', thoughtSchema);
-
-module.exports = Thought;
-========
 commentSchema.virtual('reactionCount').get(function() {
   return this.reactions.length;
 });
@@ -45,4 +35,3 @@ commentSchema.virtual('reactionCount').get(function() {
 const Comment = model('Comment', commentSchema);
 
 module.exports = Comment;
->>>>>>>> 653fc39ea4195c0463101b328649f8c5a1b2fa7f:server/models/Comment.js

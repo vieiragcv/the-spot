@@ -1,7 +1,4 @@
-// import the gql tagged template function
 const { gql } = require('apollo-server-express');
-
-// create our typeDefs
 
 const typeDefs = gql`
 
@@ -9,7 +6,8 @@ type User {
     _id: ID
     username: String
     email: String
-    descriptionText: String
+    openBio: String
+    closedBio: String
     category: String
     location: String
     preferences: String
@@ -26,13 +24,12 @@ type Comment {
     reactions: [Reaction]
 }
 
-  type Reaction {
+type Reaction {
     _id: ID
     reactionBody: String
     createdAt: String
     username: String
 }
-
 
 type Preference {
     _id: ID
@@ -44,7 +41,7 @@ type Auth {
     token: ID!
     user: User
 }
-  
+
 type Query {
     me: User
     users: [User]
@@ -56,16 +53,17 @@ type Query {
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
+    addLocation(username: String!, location: String!): Auth
+    addOpenBio(username: String!, openBio: String!): User
+    addClosedBio(username: String!, closedBio: String!): User
     addComment(commentText: String!): Comment
-    addPreference(preferencesText: String!): Preference
+    addPreference(userId: ID!, preferenceBody: String!): User
     addReaction(commentId: ID!, reactionBody: String!): Comment
     addFriend(friendId: ID!): User
 }
 `;
 
-module.exports = typeDefs
-
-
+module.exports = typeDefs;
 
 // In mutation you will need an addPreferences function:
 // addPreferences(username: String! preferencesText: String!): Preferences

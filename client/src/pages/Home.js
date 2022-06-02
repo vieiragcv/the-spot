@@ -1,12 +1,41 @@
 import React from 'react';
+import UserProfiles from '../components/UserProfiles';
+import Feed from '../components/Feed';
+
+/* import Preferences from '../components/Preferences'; */
+/* import Auth from '../utils/auth'; */
+
+/*------------------------------------------------------------
+-                     PAGES: HOME
+------------------------------------------------------------*/
+
+import { useQuery } from '@apollo/client';
+import { QUERY_COMMENTS } from '../utils/queries';
 
 const Home = () => {
 
-  return (
+  const { loading, data } = useQuery(QUERY_COMMENTS);
+  const comments = data?.comments || [];
+  console.log(comments);
+
+    return (
     <main>
-      <div className=''>
-        <p> HOME PAGE SECTION </p>
-      </div>
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+
+        <div className='grid-container'>
+          
+          <div className=''>
+            <UserProfiles  />
+          </div>
+
+          <div className=''>
+            <Feed />
+          </div>
+        </div>
+
+      )}
     </main>
   );
 };

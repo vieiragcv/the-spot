@@ -1,0 +1,10 @@
+h1 {
+    text-align: left
+}
+
+.card {
+    background-color: var(--light);
+    padding: 2rem 4rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+}

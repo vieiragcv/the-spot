@@ -1,6 +1,10 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
+/*------------------------------------------------------
+-                     SCHEMA: USER
+------------------------------------------------------*/
+
 const userSchema = new Schema(
   {
     username: {
@@ -21,24 +25,32 @@ const userSchema = new Schema(
       unique: true,
       minlength: 5
     },
-    descriptionText: {
+    openBio: {
       type: String,
-      required: 'A little bit about your work in the music industry',
+      required: false,
       minlength: 1,
       maxlength: 350
-  },
-    category: {
-        type: String,
-        required: true,
-        enum: ['Artist', 'Agent', 'Manager', 'AandR', 'Producer', 'Venue', 'Label Rep', 'Studio', 'Event'],
-        default: 'Artist'
+    },
+    closedBio: {
+      type: String,
+      required: false,
+      minlength: 1,
+      maxlength: 350
+    },
+    category: 
+    {
+      type: String,
+      required: false,
+      enum: ['Artist', 'Agent', 'Manager', 'AandR', 'Producer', 'Venue', 'Label Rep', 'Studio', 'Event'],
+      default: 'Artist'
     },
     location: {
         type: String,
         enum: ['Miami', 'Houston', 'New York', 'Las Vegas', 'Los Angeles', 'Atlanta', 'Chicago', 'New Orleans', 'Nashville', 'Baltimore'] 
     },
     preferences: {
-      type: String,
+      type: Schema.Types.ObjectId,
+      ref: 'Preferences',
       enum: ['Guitar', 'classical', 'acoustic', 'live gigs', 'rnb', 'singer', 'lounge', 'horns', 'piano', 'keyboards', 'synths', 'pop', 'reggae', 'club', 'electronic', 'dance', 'rock', 'band', 'drums', 'percussion']
     },
     friends: [

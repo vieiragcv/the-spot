@@ -1,0 +1,23 @@
+
+.profile__card {
+    padding: 5rem;
+    background: var(--light);
+    border: 1px solid transparent;
+    border-radius: 2rem;
+}
+
+.profile__card p {
+    font-size: 1.4rem;
+    font-weight: bolder;
+    text-align: left;
+}
+
+.profile__images {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+}
+
+.profile__bio {
+    text-align: center;
+}
