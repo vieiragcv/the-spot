@@ -1,19 +1,11 @@
+/* import Auth from '../../utils/auth'; */
 import React from "react";
-import makeAnimated from "react-select/animated";
 import Select from "react-select";
-import { useQuery, useMutation } from "@apollo/client";
-import { QUERY_MY_PROFILE } from "../utils/queries";
-import { REMOVE_PREFERENCE } from "../utils/mutations";
-import Auth from "../utils/auth";
-import { removeTagText } from "../utils/localStorage";
 /* import { Link } from 'react-router-dom'; */
 
 /*------------------------------------------------------------
 -         COMPONENT: USER PREFRERENCES
-
 ------------------------------------------------------------*/
-// import React, { Component } from 'react'
-
 const options = [
   { value: "Miami", label: "Miami" },
   { value: "Houston", label: "Houston" },
@@ -70,75 +62,19 @@ const options = [
   { value: "festival", label: "festival" },
 ];
 
-const Preferences = () => {
-  const { loading, data } = useQuery(QUERY_MY_PROFILE);
-  const [removePreference] = useMutation(REMOVE_PREFERENCE);
-  const userData = data?.me || {};
-  <Select options={options} />;
-
-  // create function that accepts the tags value as param and deletes the book from the database
-  const handleDeletePreference = async (tagText) => {
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-    if (!token) {
-      return false;
-    }
-
-    try {
-      await removePreference({
-        variables: { tagText: tagText },
-      });
-      // upon success, remove tags text from localStorage
-      removeTagText(tagText);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  // if data isn't here yet, say so
-  if (loading) {
-    return <h2>LOADING...</h2>;
-  }
-
+const Preferences = (props) => {
   return (
-    <>
-      <div>
-        <h2>
-          {userData.savedPreferences.length
-            ? `Viewing ${userData.savedPreferences.length} saved ${
-                userData.savedPreferences.length === 1
-                  ? "preference"
-                  : "preferences"
-              }:`
-            : "You have no saved preferences!"}
-        </h2>
-        <div>
-          {userData.savedPreferences.map((preference) => {
-            return (
-              <Button
-                className="btn-block btn-danger"
-                onClick={() => handleDeletePreference(preference.tagText)}
-              >
-                Delete this Preference!
-              </Button>
-            );
-          })}
+    <div className="">
+      <Select options={options} />
+      <div className="">
+        <div className="">
+          <div className="">
+            <p>PREFERENCES</p>
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
-
-//     <div className="">
-//       <div className="">
-//         <div className="">
-//           <div className="">
-//             <p>PREFERENCES</p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
 
 export default Preferences;

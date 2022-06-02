@@ -45,3 +45,15 @@ export const ADD_PREFERENCE = gql`
     }
   }
 `;
+
+export const REMOVE_PREFERENCE = gql`
+  mutation removePreference($tagText: String!) {
+    removePreference(tagText: $tagText) {
+      _id
+      tagText
+      createdAt
+      username
+      }
+    }
+  }
+`;
