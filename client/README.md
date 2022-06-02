@@ -27,7 +27,7 @@
   
 
   ## Screenshot
-  - [screenshot](/Develop/screenshot/readme.jpg)
+  - [screenshot](server/utils/photo/image.png)
 
 
 

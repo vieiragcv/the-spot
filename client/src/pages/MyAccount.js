@@ -39,7 +39,19 @@ const MyAccount = (props) => {
           {data.user.openBio}
         </h2>
         <h2 className="">
+        <select class="form-control form-control-lg">
+          <option>Category</option>
+          <option>Artist</option>
+          <option>Agent</option>
+          <option>AandR</option>
+          <option>Producer</option>
+          <option>Venue</option>
+          <option>Label Rep</option>
+          <option>Studio</option>
+          <option>Event</option>
+        </select>
           {data.user.closedBio}
+          <input class="form-control form-control-lg" type="text" placeholder="Closed Bio">{data.user.closedBio}</input>
         </h2>
         <h2 className="">
           {data.user.preferences}
