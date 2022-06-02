@@ -33,7 +33,11 @@ const Profile = (props) => {
      <article className="profile__bio"><h5>About Me:</h5>
         <p>For Everyone: {data.user.openBio}</p>
         <p>My Connections: {data.user.closedBio}</p>
-        <h5>Preferences:</h5>
+        <h4>Preferences:</h4>
+        <h5>Looking for Agent</h5>
+        <h5>Classic Rock</h5>
+        <h5>live gigs</h5>
+        
         <p>{data.user.preferences}</p>
      </article>
      <div>
