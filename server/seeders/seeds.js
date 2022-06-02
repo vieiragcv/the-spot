@@ -3,6 +3,8 @@ const CommentSeeds = require('./commentSeed.json');
 const db = require('../config/connection');
 const { Comment, User } = require('../models');
 
+// db.addresses.createIndex( { "xmpp_id": 1 }, { sparse: true } )
+
 db.once('open', async () => {
   try {
     await Comment.deleteMany({});
@@ -29,3 +31,4 @@ db.once('open', async () => {
   console.log('all done!');
   process.exit(0);
 });
+

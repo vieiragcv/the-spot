@@ -1,10 +1,12 @@
-import React from 'react';
+import React from "react";
+import "./feed.css";
 
 /*------------------------------------------------------------
 -          COMPONENT: FEED
 ------------------------------------------------------------*/
 import { useQuery } from '@apollo/client';
 import { QUERY_COMMENTS } from '../../utils/queries';
+
 
 const Feed = () => {
 

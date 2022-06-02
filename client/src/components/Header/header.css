@@ -1,9 +1,27 @@
 nav {
-  padding: 1.5rem;
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+  /* position: fixed; */
+  justify-content: space-evenly; 
+  /* padding: 1.5rem; */
   font-weight: bold;
   font-size: 1.5rem;
 }
 
+#record {
+    border-radius: 2rem;
+}
+
 nav h1 {
-  padding: 1rem;
+    /* align-items: left; */
+    padding: 1rem;
+    margin-right: 7rem;
+}
+
+nav li {
+    justify-content: space-between;
+    list-style: none;
+    padding: 1rem;
+    margin-top: 6.5rem;
 }
