@@ -1,9 +1,10 @@
 import React from 'react';
 import UserProfiles from '../components/UserProfiles';
+import Profile from '../pages/Profile';
 import Feed from '../components/Feed';
 
 /* import Preferences from '../components/Preferences'; */
-/* import Auth from '../utils/auth'; */
+import Auth from '../utils/auth';
 
 /*------------------------------------------------------------
 -                     PAGES: HOME
@@ -14,16 +15,26 @@ import { QUERY_COMMENTS } from '../utils/queries';
 
 const Home = () => {
 
+  const loggedIn = Auth.loggedIn();
+
   const { loading, data } = useQuery(QUERY_COMMENTS);
   const comments = data?.comments || [];
   console.log(comments);
 
     return (
     <main>
+      {loggedIn && (
+        <>
+          <div>
+               <Profile />
+          </div>
+        </>
+      )}
       {loading ? (
         <div>Loading...</div>
       ) : (
-
+          <>
+         
         <div className='grid-container'>
           
           <div className=''>
@@ -34,7 +45,7 @@ const Home = () => {
             <Feed />
           </div>
         </div>
-
+          </>
       )}
     </main>
   );

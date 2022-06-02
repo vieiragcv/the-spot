@@ -17,15 +17,20 @@ const Header = () => {
   return (
     <header>
       <div>
-        <nav className="text-center">
+        <div className="container">
           <Link to="/">
-            <h1>
-              The Spot{" "}
-              <span className="spot__img">
+            <div className="text-center">
+              <span className="text-center">
                 <img id="record" src={SPOT} alt="Record" />
               </span>
+            </div>
+            <h1 className="text-center">
+              The Spot{" "}
             </h1>
-          </Link>
+            </Link>
+        </div>
+        <nav className="text-center">
+          
           {Auth.loggedIn() ? (
             <>
             <li>

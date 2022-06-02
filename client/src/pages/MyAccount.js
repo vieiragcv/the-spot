@@ -27,7 +27,7 @@ const MyAccount = (props) => {
     <form className="card">
       <h3 className="form-header">Build Your Profile</h3>
       <label for="category">Category</label>
-      <select className="" aria-label="">
+      <select className="form-input" aria-label="">
         <option selected>Open this select menu</option>
         <option value="1">Artist</option>
         <option value="2">Agent/Manager</option>
@@ -41,25 +41,26 @@ const MyAccount = (props) => {
       <div className="fields">
         <label for="open-bio">Open Bio:</label>
         <input
-          className="input"
+          className="form-input"
           type="text"
-          placeholder="Open Bio"
+          placeholder="About you for everyone to see.."
           id="open-bio__field"
         />
       </div>
       <div className="fields">
         <label for="email-signup">Closed Bio:</label>
         <input
-          className="input"
+          className="form-input"
           type="text"
-          placeholder="Closed Bio"
+          placeholder="Details only friends will see.."
           id="closed-bio__field"
         />
       </div>
       <div className="fields">
         <label for="age-signup">Preferences:</label>
-        <input className="input" type="text" id="preferences-menu" />
+        <input className="form-input" type="text" id="preferences-menu" />
       </div>
+      <button className='btn w-100' type='submit'> Update Profile </button>
     </form>
   );
 };
