@@ -173,7 +173,7 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in! addClosedBio");
     },
     
-    updateUser: async (parent, args, context) => {
+ /*    updateUser: async (parent, args, context) => {
       const updateUser = await User.findOneAndUpdate(
         { username: username },
         { 
@@ -183,7 +183,7 @@ const resolvers = {
         { }
 
       )
-    }
+    } */
 
   }
 };

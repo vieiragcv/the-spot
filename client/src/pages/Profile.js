@@ -34,7 +34,7 @@ const Profile = (props) => {
         <p>{data.user.preferences}</p>
      </article>
      <div>
-       <img className="profile__images" src={AVATAR1}/>
+       <img className="profile__images" src={AVATAR1} alt=''/>
      </div>
        <caption><h3>{data.user.username}</h3></caption>
        <caption><h4>{data.user.category}</h4></caption>
