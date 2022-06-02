@@ -62,7 +62,13 @@ const options = [
   { value: "festival", label: "festival" },
 ];
 
+<<<<<<< HEAD
 const Preferences = (props) => {
+=======
+
+const Preferences = (props) => {
+  
+>>>>>>> ed95d642511021660f54c763cca68cabbe6bf6ee
   return (
     <div className="">
       <Select options={options} />

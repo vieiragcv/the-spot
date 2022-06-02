@@ -1,7 +1,4 @@
-import Auth from '../utils/auth';
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { ADD_USER } from '../utils/mutations';
+import React from 'react';
 
 /*------------------------------------------------------------
 -         PAGES: INBOX
@@ -10,19 +7,18 @@ import { ADD_USER } from '../utils/mutations';
 
 const Inbox = () => {
 
-retrun (
+return (
   <main className='flex-row justify-center'>
       <div className='col-12 col-md-6'>
         <div className='card'>
-          <h4 className='card-header'>Friend Requests</h4>
+          <h4 className='card-header'>My Inbox</h4>
           <div className='card-body'>
-          <p>You have been added by XXXXX , Accept?</p>
+          <p>Post #1 i commented on</p>
           </div>
         </div>
       </div>
   </main>
 )
-
 };
 
 export default Inbox;
