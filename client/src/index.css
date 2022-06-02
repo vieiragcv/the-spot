@@ -255,6 +255,10 @@ nav a:hover {
   width: 92%;
 }
 
+.user-profile {
+  grid-row: 1/3
+}
+
 /* DISPLAY */
 
 .display-none {

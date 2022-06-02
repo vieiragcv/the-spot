@@ -20,26 +20,28 @@ const Profile = (props) => {
   if (error) return `Error! ${error.message}`;
   
   return(
-    <div>
-      <div className="flex-row mb-3">
-        <h2 className="">
+    <div className='grid-container'>
+      <div className="">
+
+        <h2 className="card-header">
           {data.user.username}
         </h2>
-        <h2 className="">
+        <h2 className="card-body">
           {data.user.email}
         </h2>
-        <h2 className="">
+        <h2 className="card-body">
           {data.user.category}
         </h2>
-        <h2 className="">
+        <h2 className="card-body">
           {data.user.openBio}
         </h2>
-        <h2 className="">
+        <h2 className="card-body">
           {data.user.closedBio}
         </h2>
-        <h2 className="">
+        <h2 className="card-body">
           {data.user.preferences}
         </h2>
+
       </div>
     </div>
   );
