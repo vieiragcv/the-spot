@@ -1,6 +1,6 @@
 import React from 'react';
 import Auth from '../utils/auth';
-import { useQuery, useMutation } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 
 /*------------------------------------------------------
@@ -9,39 +9,39 @@ import { QUERY_USER } from '../utils/queries';
 
 const Profile = (props) => {
   
-  const user = Auth.getProfile();
-  const username = user.data.username;
-  console.log(username);
+  const loggedUser = Auth.getProfile();
+  const username = loggedUser.data.username;
 
   const { loading, error, data } = useQuery(QUERY_USER, {
     variables: { username }
   });
-  
   console.log(data);
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
   
   return(
-    <div>
-      <div className="flex-row mb-3">
-        <h2 className="">
+    <div className='grid-container'>
+      <div className="">
+
+        <h2 className="card-header">
           {data.user.username}
         </h2>
-        <h2 className="">
+        <h2 className="card-body">
           {data.user.email}
         </h2>
-        <h2 className="">
+        <h2 className="card-body">
           {data.user.category}
         </h2>
-        <h2 className="">
+        <h2 className="card-body">
           {data.user.openBio}
         </h2>
-        <h2 className="">
+        <h2 className="card-body">
           {data.user.closedBio}
         </h2>
-        <h2 className="">
+        <h2 className="card-body">
           {data.user.preferences}
         </h2>
+
       </div>
     </div>
   );

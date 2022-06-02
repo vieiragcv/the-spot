@@ -41,3 +41,8 @@ export const ADD_CLOSED_BIO = gql`
     }
   }
 `;
+
+/* export const UPDATE_USER = gql`
+  mutation updateUser()
+`;
+ */
