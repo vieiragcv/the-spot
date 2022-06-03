@@ -1,22 +1,14 @@
 nav {
-<<<<<<< HEAD
-  padding: 1.5rem;
-=======
   display: inline-flex;
   width: 100%;
   flex-wrap: wrap;
   /* position: fixed; */
   justify-content: space-evenly; 
   /* padding: 1.5rem; */
->>>>>>> 64ac7a7b32957713a4a80363fe4eb1ee86e6a8b8
   font-weight: bold;
   font-size: 1.5rem;
 }
 
-<<<<<<< HEAD
-nav h1 {
-  padding: 1rem;
-=======
 #record {
     border-radius: 2rem;
 }
@@ -32,5 +24,4 @@ nav li {
     list-style: none;
     padding: 1rem;
     margin-top: 0.5rem;
->>>>>>> 64ac7a7b32957713a4a80363fe4eb1ee86e6a8b8
 }

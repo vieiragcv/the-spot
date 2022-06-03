@@ -1,11 +1,10 @@
 import React from 'react';
 import Auth from '../utils/auth';
+import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
-import './assets/profile.css'
-import AVATAR1 from './assets/images/jcooperavatar.jpg'
-
-
+import AVATAR1 from './assets/images/jcooperavatar.jpg';
+import './assets/profile.css';
 
 /*------------------------------------------------------
 -                     PROFILE (PAGES) 
@@ -13,14 +12,17 @@ import AVATAR1 from './assets/images/jcooperavatar.jpg'
 
 const Profile = (props) => {
 
+  const { username: userParam } = useParams();
+  console.log(userParam);
   
   const loggedUser = Auth.getProfile();
   const username = loggedUser.data.username;
+  console.log(username);
 
   const { loading, error, data } = useQuery(QUERY_USER, {
     variables: { username }
   });
-  console.log(data);
+
   if (loading) return 'Loading...';
   if (error) return `Error! ${error.message}`;
   
@@ -29,15 +31,19 @@ const Profile = (props) => {
    <section className="profile__container">
      <div className="profile__card">
      <article className="profile__bio"><h5>About Me:</h5>
-        <p>{data.user.openBio}</p>
-        <h5>Preferences:</h5>
+        <p>For Everyone: {data.user.openBio}</p>
+        <p>My Connections: {data.user.closedBio}</p>
+        <h4>Preferences:</h4>
+        <h5>Looking for Agent</h5>
+        <h5>Classic Rock</h5>
+        <h5>live gigs</h5>
+        
         <p>{data.user.preferences}</p>
      </article>
      <div>
        <img className="profile__images" src={AVATAR1} alt=''/>
      </div>
-       <caption><h3>{data.user.username}</h3></caption>
-       <caption><h4>{data.user.category}</h4></caption>
+       <h3>{data.user.username} is an {data.user.category} in Miami, FL </h3>
      </div>
    </section>
   );

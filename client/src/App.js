@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes,  Route } from 'react-router-dom';
 import { 
   ApolloProvider, 
   ApolloClient, 
@@ -16,6 +16,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Inbox from './pages/Inbox';
 import MyAccount from './pages/MyAccount';
+import OtherProfile from './pages/OtherProfile';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -50,8 +51,12 @@ function App() {
                       element={<Home />}
                     />
                     <Route
-                      path='/profile'
+                      path='/myprofile'
                       element={<Profile />}
+                    />
+                    <Route
+                      path='/profile/:username'
+                      element={<OtherProfile />}
                     />
                     <Route
                       path='/login'
