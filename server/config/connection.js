@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/the-spot', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:3001/the-spot-group', {
   useNewUrlParser: true,
   useUnifiedTopology: true
   
