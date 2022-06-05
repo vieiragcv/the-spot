@@ -57,6 +57,7 @@ type Mutation {
     addOpenBio(username: String!, openBio: String!): User
     addClosedBio(username: String!, closedBio: String!): User
     addComment(commentText: String!): Comment
+    updateUser(openBio: String!, closedBio: String!, category: String!): User
     addPreference(userId: ID!, preferenceBody: String!): User
     addReaction(commentId: ID!, reactionBody: String!): Comment
     addFriend(friendId: ID!): User

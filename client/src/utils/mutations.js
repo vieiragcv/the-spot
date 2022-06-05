@@ -42,7 +42,12 @@ export const ADD_CLOSED_BIO = gql`
   }
 `;
 
-/* export const UPDATE_USER = gql`
-  mutation updateUser()
+export const UPDATE_USER = gql`
+  mutation updateUser($openBio: String!, $closedBio: String!, $category: String!) {
+    mutation updateUser(openBio: $openBio, closedBio: $closedBio, category: $category) {
+      openBio
+      closedBio
+      category
+    }
+  }
 `;
- */

@@ -1,11 +1,11 @@
 const userSeeds = require('./userSeed.json');
 const CommentSeeds = require('./commentSeed.json');
-const db = require('../config/connection');
+const db = require('../config/connection');            //CLIENT
 const { Comment, User } = require('../models');
 
 // db.addresses.createIndex( { "xmpp_id": 1 }, { sparse: true } )
 
-db.once('open', async () => {
+db.once('open', async () => {    
   try {
     await Comment.deleteMany({});
     await User.deleteMany({});

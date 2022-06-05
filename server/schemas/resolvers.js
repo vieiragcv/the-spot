@@ -52,7 +52,6 @@ const resolvers = {
     addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
-
       return { token, user };
     },
 
@@ -173,17 +172,17 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in! addClosedBio");
     },
     
- /*    updateUser: async (parent, args, context) => {
-      const updateUser = await User.findOneAndUpdate(
-        { username: username },
-        { 
-          username: args.username,
-          
-        },
-        { }
-
-      )
-    } */
+    updateUser: async (parent, args, context) => {
+      if(context.user) {
+        const updateUser = await User.findOneAndUpdate(
+          { category: category },
+          { openBio: openBio },
+          { closedBio: closedBio }
+        );
+        return updateUser;
+      }
+      throw new AuthenticationError('Error updating account');
+    }
 
   }
 };
