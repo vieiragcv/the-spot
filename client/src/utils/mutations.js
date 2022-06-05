@@ -51,3 +51,12 @@ export const UPDATE_USER = gql`
     }
   }
 `;
+
+/* export const ADD_COMMENT = gql`
+  mutation addComment($commentText)  {
+    mutation addComment(commentText: $commentText) {
+      username
+      commentText
+    }
+  }
+`; */

@@ -1,6 +1,6 @@
 
 import React, {useState}  from 'react';
-import Auth from '../utils/auth';
+/* import Auth from '../utils/auth'; */
 import { useMutation } from '@apollo/client';
 import { UPDATE_USER } from '../utils/mutations';
 
@@ -15,7 +15,7 @@ import { UPDATE_USER } from '../utils/mutations';
 const MyAccount = (props) => {
   const [formState, setFormState] = useState({ category: '', openBio: '', closedBio: '' });
   const [updateUser, {error}] = useMutation(UPDATE_USER);
-  const user = Auth.getProfile();
+/*   const user = Auth.getProfile(); */
 
     const handleChange = (event) => {
       const { name, value } = event.target ;
